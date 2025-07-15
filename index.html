@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indian Number Validator</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="buttons.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="bg">
+    <div class="glass-card">
+      <div class="header">
+        <div class="logo">IN</div>
+        <h1>Mobile Validator</h1>
+        <div class="lang-switcher">
+          <label for="lang-select">🌐</label>
+          <select id="lang-select">
+            <option value="en">English</option>
+            <option value="hi">हिन्दी</option>
+            <option value="bn">বাংলা</option>
+            <option value="ta">தமிழ்</option>
+          </select>
+        </div>
+      </div>
+
+      <form id="validator-form" autocomplete="off">
+        <label id="label-phone" for="user-input">
+          Indian Phone Number
+          <div class="tooltip-container">
+            <span class="info-icon">i</span>
+            <div class="custom-tooltip" id="tooltip-text">
+              Accepts +91, 91, or 0 prefix. Starts with 6-9 and must be 10 digits.
+            </div>
+          </div>
+        </label>
+        <input type="text" id="user-input" placeholder="+91-9000012345" maxlength="16" />
+        <small id="helper-text">Format: +91-XXXXXXXXXX</small>
+
+        <div class="buttons">
+          <button type="submit" id="check-btn">Validate</button>
+          <button type="button" id="clear-btn">Clear</button>
+        </div>
+
+        <div id="results-div"></div>
+        <button id="copy-btn" title="Copy to clipboard">📋 Copy Number</button>
+      </form>
+    </div>
+    <footer>Validator • Multilingual UI &copy; 2025</footer>
+  </div>
+</body>
+</html>

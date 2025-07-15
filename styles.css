@@ -1,0 +1,246 @@
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.25);
+  --blur: blur(15px);
+  --border: rgba(255, 255, 255, 0.3);
+  --text-dark: #333;
+  --text-light: #fff;
+  --pastel-blue: #a2d2ff;
+  --pastel-pink: #ffc8dd;
+  --valid: #38b000;
+  --invalid: #d00000;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+}
+
+.bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: var(--text-dark);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  background: var(--pastel-pink);
+  color: var(--text-light);
+  font-weight: bold;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.lang-switcher {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+select#lang-select {
+  padding: 6px 12px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #f9f9ff;
+  cursor: pointer;
+}
+
+.tooltip-container {
+  display: inline-block;
+  position: relative;
+  margin-left: 6px;
+}
+
+.info-icon {
+  background: #d0bfff;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.75rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: help;
+}
+
+.custom-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  background-color: #ffffffee;
+  color: #444;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  padding: 8px;
+  position: absolute;
+  z-index: 10;
+  width: 220px;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.custom-tooltip::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent #ffffffee transparent;
+}
+
+.tooltip-container:hover .custom-tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+
+/* General button styles */
+.buttons button,
+#copy-btn {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.buttons button:hover,
+#copy-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#copy-btn {
+  width: 100%;
+  margin-top: 14px;
+  background: linear-gradient(135deg, #b5ead7, #ffdac1);
+}
+
+#check-btn {
+  background: linear-gradient(135deg, #a2d2ff, #bde0fe);
+  color: #222;
+}
+
+#check-btn:hover {
+  background: linear-gradient(135deg, #8ecae6, #bde0fe);
+}
+
+#clear-btn {
+  background: linear-gradient(135deg, #ffc8dd, #ffafcc);
+  color: #222;
+}
+
+#clear-btn:hover {
+  background: linear-gradient(135deg, #ffafcc, #fbc4ab);
+}
+
+.logo {
+  background: linear-gradient(135deg, #cdb4db, #b5a5d4);
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  min-width: 44px;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+
+
+#results-div {
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+#results-div.valid {
+  color: var(--valid);
+}
+
+#results-div.invalid {
+  color: var(--invalid);
+}
+
+footer {
+  margin-top: 20px;
+  color: #333;
+  font-size: 0.9rem;
+  text-align: center;
+}
